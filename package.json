@@ -42,6 +42,7 @@
     "lint:fix": "eslint --fix src/*.ts",
     "test": "npm-run-all -s lint clean build test:js",
     "test:js": "nyc ava",
+    "prepare": "npm-run-all -s build",
     "publish-coverage": "nyc report --reporter=text-lcov | coveralls",
     "prepublish": "npm-run-all -s test"
   },
