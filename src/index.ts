@@ -26,7 +26,7 @@ function reload(requestsPerInterval: number, interval: number, state: State): St
 export = function wyt(
   requestsPerInterval: number,
   interval: number,
-): (requests?: number) => Promise<number> {
+): ((requests?: number) => Promise<number>) & { readonly state: State } {
   const timePerRequest = interval / requestsPerInterval;
 
   let state: State = {
@@ -49,5 +49,13 @@ export = function wyt(
     return wait;
   }
 
-  return waitRequest;
+  Object.defineProperty(waitRequest, 'state', {
+    configurable: false,
+    enumerable: true,
+    get() {
+      return state;
+    },
+  });
+
+  return waitRequest as (typeof waitRequest) & { readonly state: State };
 }
