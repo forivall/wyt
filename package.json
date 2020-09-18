@@ -1,5 +1,5 @@
 {
-  "name": "wyt",
+  "name": "@forivall/wyt",
   "version": "2.0.2-pre.0",
   "description": "A time-based rate limiter using promises",
   "keywords": [
@@ -21,14 +21,17 @@
     "typescript"
   ],
   "author": "Max Kueng (https://maxkueng.com/contact)",
+  "contributors": [
+    "Emily Klassen (forivall@users.noreply.github.com"
+  ],
   "license": "MIT",
-  "homepage": "https://github.com/maxkueng/wyt",
+  "homepage": "https://github.com/forivall/wyt",
   "repository": {
     "type": "git",
-    "url": "git://github.com/maxkueng/wyt.git"
+    "url": "git://github.com/forivall/wyt.git"
   },
   "bugs": {
-    "url": "https://github.com/maxkueng/wyt/issues"
+    "url": "https://github.com/forivall/wyt/issues"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
